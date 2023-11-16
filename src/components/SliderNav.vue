@@ -10,7 +10,7 @@
       </a-breadcrumb>
     </div>
     <div class="user-info">
-      <div class="user-name">欢迎qizhipeng</div>
+      <div class="user-name">欢迎<span class="uname">qizhipeng</span></div>
       <div class="out">
         退出
         <div class="out-pointer"></div>
