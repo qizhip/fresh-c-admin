@@ -10,8 +10,12 @@
       </a-breadcrumb>
     </div>
     <div class="user-info">
-      <div class="user-name">欢迎<span class="uname">qizhipeng</span></div>
-      <div class="out">
+      <div class="user-name">
+        欢迎<span class="uname" ref="uname">{{
+          $store.state.user.username
+        }}</span>
+      </div>
+      <div class="out" ref="out">
         退出
         <div class="out-pointer"></div>
       </div>
@@ -20,7 +24,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted: function () {
+    if (this.$refs.uname.innerText === "") {
+      this.$refs.out.style.display = "none";
+    }
+    this.$store.dispatch("set");
+  },
+};
 </script>
 
 <style lang="less" scoped>
