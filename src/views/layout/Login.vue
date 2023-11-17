@@ -75,6 +75,7 @@ export default {
         if (valid) {
           api.login(this.loginForm).then(
             (data) => {
+              this.$store.dispatch("setUserInfo", data);
               this.$router.push({ name: "Home" });
             },
             (error) => {
