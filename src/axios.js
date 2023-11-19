@@ -9,7 +9,6 @@ instance.interceptors.request.use((config) => {
 }, (err) => Promise.reject(error));
 
 instance.interceptors.response.use((response) => {
-    console.log(response);
     if (response.data.status === 'success') {
         return response.data.data;
     } else {
