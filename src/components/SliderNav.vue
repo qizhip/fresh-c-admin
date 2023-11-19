@@ -15,7 +15,7 @@
           $store.state.user.username
         }}</span>
       </div>
-      <div class="out" ref="out">
+      <div class="out" ref="out" @click="logout">
         退出
         <div class="out-pointer"></div>
       </div>
@@ -29,7 +29,13 @@ export default {
     if (this.$refs.uname.innerText === "") {
       this.$refs.out.style.display = "none";
     }
-    this.$store.dispatch("set");
+  },
+
+  methods: {
+    logout() {
+      this.$router.push({ name: "Login" });
+      this.$store.dispatch("logout");
+    },
   },
 };
 </script>
